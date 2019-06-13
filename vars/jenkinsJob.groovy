@@ -19,7 +19,8 @@ def packageArtifact(){
             sh "mvn package"
         }
         catch(Exception e) {
-            echo "Error"
+            echo "Error";
+            throw e;
         }        
     }
 }
