@@ -15,7 +15,12 @@ def call(){
 
 def packageArtifact(){
     stage("Package artifact") {
-        sh "mvn package"
+        try {
+            sh "mvn package"
+        }
+        catch(Exception e) {
+            echo "Error"
+        }        
     }
 }
 
